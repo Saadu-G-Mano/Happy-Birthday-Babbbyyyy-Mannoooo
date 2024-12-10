@@ -1,0 +1,272 @@
+/* General Body Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background: linear-gradient(to bottom, #ffd1dc, #ffb6c1); /* Keeps the same background gradient */
+  overflow-x: hidden; /* Ensures no horizontal scrolling */
+  overflow-y: auto; /* Allows vertical scrolling */
+  height: 100%;
+}
+
+/* Main Heading Styling */
+h1 {
+  color: #ff4081;  /* A bright pink color to match the playful theme */
+  font-size: 2.35rem;  /* Large font size for emphasis */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);  /* Subtle shadow for added depth */
+}
+
+/* General Styling for Top and Bottom Text */
+.top-text{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  color: #ff66b2;
+  font-weight: bold;
+  z-index: 1;  /* Ensures text appears above other content */
+}
+
+.top-text {
+  top: 30px;  /* Position it at the very top */
+}
+
+/* Bottom Text Styling */
+.bottom-text {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 2rem;
+  color: #ff66b2; /* Lighter pink for the bottom text */
+  font-weight: bold;
+  z-index: 10; /* Ensures the text is above other content */
+}
+
+/* Container Styling */
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Banner Styling */
+.banner img {
+  width: 150%;
+  max-width: 1000px;
+  margin-bottom: 50px;
+}
+
+/* Spacer to Enable Scrolling */
+.spacer {
+  height: 600px; /* Adjust the height to create enough space for scrolling */
+}
+
+/* Video Section Styling */
+.video-section {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.video-container {
+  width: 80%;
+  margin: -10px auto 20px auto; /* Move the video container up by 50px */
+  background: #ff548d;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.video-container video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+/* Floating Clouds */
+.cloud {
+  position: absolute;
+  width: 15vw;  /* You can adjust the cloud size */
+  opacity: 0.8;
+  animation: float 30s linear infinite;
+  z-index: 1;   /* Ensures clouds stay above the background */
+  pointer-events: none;  /* Avoids interaction issues */
+}
+
+.cloud1 {
+  top: 10%;
+  left: -20%;   /* Start off-screen on the left */
+  animation-delay: 0s;
+}
+
+.cloud2 {
+  top: 50%;
+  left: -20%;  /* Start off-screen on the right */
+  animation-delay: 4s;
+}
+
+.cloud3 {
+  bottom: -5%;
+  left: -20%;   /* Start off-screen on the left */
+  animation-delay: 8s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(0);  /* Start at the left side */
+  }
+  100% {
+    transform: translateX(100vw);  /* Move to the right side */
+  }
+}
+
+
+/* Hearts Animation */
+#hearts-container {
+  position: absolute;
+  width: 100%;
+  height: 200vh; /* Extend container height to cover both pages */
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1; /* Lower than the video container */
+}
+
+.heart {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-color: #ff4081;
+  transform: rotate(45deg);
+  animation: floatHearts 8s linear infinite;
+  bottom: 0; /* Start from the very bottom of the second page */
+}
+
+.heart::after,
+.heart::before {
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-color: #ff4081;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -20px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -20px;
+}
+
+@keyframes floatHearts {
+  0% {
+    transform: translateY(0) rotate(45deg) scale(0.5); /* Start at the bottom */
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200vh) rotate(45deg) scale(1.5); /* Float across both pages */
+    opacity: 0;
+  }
+}
+
+/* Static Hearts Background */
+#heart-container {
+  position: absolute;
+  width: 100%;
+  height: 200vh; /* Ensure it covers the whole page */
+  pointer-events: none; /* Prevent it from blocking other elements */
+  z-index: -1; /* Keep it in the background */
+}
+
+.static-heart {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #ffebeb;
+  transform: rotate(45deg);
+
+}
+
+.static-heart::after,
+.static-heart::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  background-color: #ffebeb;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.static-heart::before {
+  top: -15px;
+  left: 0;
+}
+
+.static-heart::after {
+  top: 0;
+  left: -15px;
+}
+
+
+/* Play/Pause Button */
+#music-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+#music-button:hover {
+  background-color: #e91e63;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .banner img {
+    width: 90%;
+  }
+
+  .cloud {
+    width: 20vw;
+  }
+
+  #music-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .cloud {
+    width: 25vw;
+  }
+
+  #music-button {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
+
