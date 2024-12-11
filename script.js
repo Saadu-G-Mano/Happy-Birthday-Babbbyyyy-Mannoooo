@@ -62,4 +62,5 @@ function createCheckeredHearts() {
     }
   }
 }
-
+// Call the function to create static hearts when the page loads
+window.onload = createCheckeredHearts;
