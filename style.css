@@ -58,7 +58,7 @@ h1 {
 
 /* Banner Styling */
 .banner img {
-  width: 150%;
+  width: 200%;
   max-width: 1000px;
   margin-bottom: 50px;
 }
@@ -269,4 +269,48 @@ h1 {
     padding: 8px 16px;
   }
 }
+/* Background Clouds Styling */
+#background-clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Behind everything */
+  overflow: hidden;
+}
 
+.background-cloud {
+  position: absolute;
+  opacity: 0.5; /* Make them more transparent */
+  width: 20vw; /* Slightly smaller than front clouds */
+  animation: float-background 100s linear infinite; /* Slower movement */
+}
+
+.bg-cloud1 {
+  top: 10%;
+  left: -20%;
+  animation-delay: 0s;
+}
+
+.bg-cloud2 {
+  top: 50%;
+  left: -20%;
+  animation-delay: 10s;
+}
+
+.bg-cloud3 {
+  top: 80%;
+  left: -20%;
+  animation-delay: 20s;
+}
+
+/* Floating Animation for Background Clouds */
+@keyframes float-background {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200%);
+  }
+}
