@@ -314,3 +314,31 @@ h1 {
     transform: translateX(200%);
   }
 }
+/* Ghost-like message styling */
+.ghost-message {
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  animation: ghostEffect 4s ease-in-out forwards;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Animation for the ghost effect */
+@keyframes ghostEffect {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(1.2);
+  }
+}
